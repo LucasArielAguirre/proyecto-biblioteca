@@ -2,6 +2,7 @@
 import React, { FC } from 'react';
 import Navbar from './Navbar';
 import Bienvenida from './Bienvenida';
+import { Analytics } from '@vercel/analytics/react';
 
 
 interface LayoutProps {
@@ -14,7 +15,7 @@ const Layout: FC<LayoutProps> = ({ children }) => {
       <Navbar />
       <Bienvenida />
       {children} {/* Aquí se renderizan los componentes hijos */}
-      
+      <Analytics />
     </>
   );
 };
