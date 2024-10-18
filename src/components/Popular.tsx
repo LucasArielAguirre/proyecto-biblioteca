@@ -44,7 +44,7 @@ const Books: React.FC = () => {
                   <img
                     src={`/${img}`}
                     alt={title}
-                    className="mr-5 w-48 rounded-lg shadow-lg shadow-red-700 saturate-150 mb-6 md:mb-0"
+                    className="md:mr-5 mr-0 w-48 rounded-lg shadow-lg shadow-red-700 saturate-150 mb-6 md:mb-0"
                     
                   />
                   <div className="flex flex-col justify-center ml-2">
