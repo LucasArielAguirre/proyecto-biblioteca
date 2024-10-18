@@ -1,4 +1,4 @@
-import React from 'react'
+
 import { Libros } from '../content/Libros';
 import Star from './icons/Star';
 import AOS from 'aos';
