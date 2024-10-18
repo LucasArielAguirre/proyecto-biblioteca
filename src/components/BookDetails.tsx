@@ -58,27 +58,27 @@ const BookDetails: React.FC = () => {
         <LineMdArrowSmallLeft/>
         Volver
       </span></a>
-      <div id="stragger" className='flex flex-row items-start max-w-3xl mx-auto mb-6'>
+      <div id="stragger" className='flex flex-col md:flex-row items-center md:items-start max-w-3xl mx-auto mb-6'>
         <img id='imgbook'
           src={`/${book.img}`} 
           alt={book.title} 
-          className="w-52 h-80 rounded-lg shadow-lg shadow-red-700 saturate-150 mr-4" 
+          className="w-52 h-80 rounded-lg shadow-lg shadow-red-700 saturate-150 mr-4 mb-5 md:mb-0" 
         /> 
       
         <div className='flex flex-col justify-between'> {}
           <div>
             <div className='flex flex-row mb-2'>
-              <h2 className="text-2xl font-texth1 text-[--var-color-text] leading-tight hover:underline">{book.title}</h2>
+              <h2 className="text-2xl font-texth1 text-[--var-color-text] leading-tight hover:underline mx-2 md:mx-0">{book.title}</h2>
               <div className="ml-2">
                 {renderAvailability(isAvailable)}
               </div>
             </div>
-            <p className="text-gray-600 text-sm max-w-md">{book.resume}</p>
-            <p id='time' className="text-gray-500 text-sm mt-2"> <b className="animate-pulse">⏳</b> Lectura en {book.readTime} minutos.</p>          
+            <p className="text-gray-700 text-sm max-w-md mx-2 md:mx-0">{book.resume}</p>
+            <p id='time' className="text-gray-500 text-sm mt-2 mx-2 md:mx-0"> <b className="animate-pulse">⏳</b> Lectura en {book.readTime} minutos.</p>          
           </div>
 
         
-          <div className="flex space-x-4 mt-4">
+          <div className="flex space-x-4 mt-4 items-center justify-center md:justify-start md:items-start">
             <motion.button 
               whileTap={{ scale: 2 }}
               onClick={handleReserve} 
