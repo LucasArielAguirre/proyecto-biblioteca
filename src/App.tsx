@@ -9,12 +9,15 @@ import { AnimatePresence, motion } from 'framer-motion';
 import Others from './components/Others';
 import Footer from './components/Footer';
 import AllSearch from './pages/AllSearch';
+import { Analytics } from '@vercel/analytics/react';
+
 function App() {
   return (
 
         <Router>
             <Navbar/>    
             <MainContent />
+            <Analytics />
        </Router>
   
   );
