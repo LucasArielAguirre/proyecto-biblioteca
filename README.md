@@ -2,7 +2,7 @@
 
 # React Application with Vite, TypeScript, and Tailwind CSS
 
-This is a React application built using Vite as the build tool, TypeScript (TSX) for static typing, and Tailwind CSS for styling. The project is hosted on GitHub.
+This is a React application built using Vite as the build tool, TypeScript (TSX) for static typing, and Tailwind CSS for styling. The project is hosted on Vercel.
 
 ## Technologies
 
