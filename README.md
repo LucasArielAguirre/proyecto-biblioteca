@@ -1,51 +1,83 @@
-# React + TypeScript + Vite
-# Biblioteca creada para EL instituto superior tecnologico N°9-012
+# Library created for the Technological Higher Institute N ° 9-012
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# React Application with Vite, TypeScript, and Tailwind CSS
 
-Currently, two official plugins are available:
+This is a React application built using Vite as the build tool, TypeScript (TSX) for static typing, and Tailwind CSS for styling. The project is hosted on GitHub.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Technologies
 
-## Expanding the ESLint configuration
+- **Frontend Framework**: React
+- **Build Tool**: Vite
+- **TypeScript Compiler**: TypeScript (TSX)
+- **CSS Framework**: Tailwind CSS
+- **Version Control**: GitHub
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Getting Started
 
-- Configure the top-level `parserOptions` property like this:
+To get started with this project, follow these steps:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/LucasArielAguirre/proyecto-biblioteca.git
+    ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+2. Install dependencies:
+    ```bash
+    npm install
+    ```
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+3. Build the application:
+    ```bash
+    npm run build
+    ```
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+4. Start the development server:
+    ```bash
+    npm run start
+    ```
+
+5. Open the application in your browser:
+    ```
+    http://localhost:3000
+    ```
+
+## Directory Structure
+## Scripts
+
+- `npm run build`: Builds the application for production.
+- `npm run start`: Starts the development server.
+- `npm run test`: Runs the Jest test suite.
+
+## Tailwind CSS Configuration
+
+- `tailwind.config.js`: Defines the content, theme, and plugins for Tailwind CSS.
+- `postcss.config.cjs`: Enables PostCSS processing for Tailwind CSS.
+
+## Contributing
+
+If you'd like to contribute to this project, please follow these steps:
+
+1. Fork the repository and create a new branch for your feature or bug fix:
+    ```bash
+    git checkout -b feature/your-feature-name
+    ```
+
+2. Make your changes and commit them with descriptive messages:
+    ```bash
+    git commit -m "Add new feature: description"
+    ```
+
+3. Push your changes to your forked repository:
+    ```bash
+    git push origin feature/your-feature-name
+    ```
+
+4. Submit a pull request to the original repository.
+
+
+## Acknowledgments
+
+- **Vite**: A modern frontend build tool.
+- **React**: A JavaScript library for building user interfaces.
+- **Tailwind CSS**: A utility-first CSS framework.
+- **TypeScript**: A statically typed JavaScript compiler.
