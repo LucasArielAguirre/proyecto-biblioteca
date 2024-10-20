@@ -6,7 +6,7 @@ import { Analytics } from '@vercel/analytics/react';
 
 
 interface LayoutProps {
-  children: React.ReactNode; // Especifica que el componente acepta children
+  children: React.ReactNode; 
 }
 
 const Layout: FC<LayoutProps> = ({ children }) => {
@@ -14,7 +14,7 @@ const Layout: FC<LayoutProps> = ({ children }) => {
     <>
       <Navbar />
       <Bienvenida />
-      {children} {/* Aquí se renderizan los componentes hijos */}
+      {children} 
       <Analytics />
     </>
   );

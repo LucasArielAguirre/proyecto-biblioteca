@@ -3,7 +3,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Bienvenida from './components/Bienvenida';
 import Navbar from './components/Navbar';
-import Books from './components/Popular'; // Asegúrate de que este sea tu componente que lista libros
+import Books from './components/Popular'; 
 import BookDetails from './components/BookDetails'; 
 import { AnimatePresence, motion } from 'framer-motion';
 import Others from './components/Others';
