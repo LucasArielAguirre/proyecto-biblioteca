@@ -26,6 +26,14 @@ const Navbar = () => {
             LIBROS
           </Link>
         </li>
+        <li>
+          <Link
+            to="/login"
+            className="flex py-2 px-3 font-texth1 text-[--var-color-text] hover:underline decoration-[--var-color-text-red] hover:scale-110 transition-all duration-400"
+          >
+            LOGIN
+          </Link>
+        </li>
       </ul>
     </nav>
   );
