@@ -57,7 +57,7 @@ const Estados = () => {
      
       <div className=' items-center justify-center flex'>        
         <DataTable value={libros} tableStyle={{ minWidth: '60rem' }} className='bg-black border text-fuchsia-500'>
-          <Column field="title" header="TÍTULO" className='border-b border-t border-white mb-4 '></Column>
+          <Column field="title" header="TÍTULO" className='border-b border-t border-white mb-4 text-white uppercase'></Column>
           <Column header="IMAGEN" body={renderImage} className='border-b border-t border-white mb-4'></Column>
           <Column header="DISPONIBLIDAD" body={renderAvailability} className='border-b border-t border-white mb-4'></Column>
           <Column header="CAMBIAR DISPONIBLIDAD" body={renderChangeButton} className='border-b border-t mb-4'></Column>
