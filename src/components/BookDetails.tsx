@@ -18,7 +18,7 @@ const BookDetails: React.FC = () => {
   const { id } = useParams<{ id: string }>(); 
   const book = Libros.find(book => book.title === id); 
   
-  // Estado para manejar la disponibilidad del libro
+ 
   const [isAvailable, setIsAvailable] = useState(book ? book.disponible : false); 
 
   if (!book) {
@@ -40,12 +40,11 @@ const BookDetails: React.FC = () => {
     );
   };
 
-  // Función para manejar la reserva del libro
   const handleReserve = () => {
     setIsAvailable(false); // Cambia el estado a no disponible
   };
 
-  // Función para manejar la devolución del libro
+
   const handleReturn = () => {
     setIsAvailable(true); 
   };
@@ -60,7 +59,7 @@ const BookDetails: React.FC = () => {
       </span></a>
       <div id="stragger" className='flex flex-col md:flex-row items-center md:items-start max-w-3xl mx-auto mb-6'>
         <img id='imgbook'
-          src={`/${book.img}`} 
+          src={`${book.img}`} 
           alt={book.title} 
           className="w-52 h-80 rounded-lg shadow-lg shadow-red-700 saturate-150 mr-4 mb-5 md:mb-0" 
         /> 
