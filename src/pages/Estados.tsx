@@ -46,17 +46,21 @@ const Estados = () => {
   };
 
   return (
- <main className='w-full h-screen bg-black'>
-    <NavbarAdmin/>
-    <section className='w-full h-screen bg-black'>
-      <h1 className='text-2xl uppercase text-center text-white underline decoration-fuchsia-900'>Bienvenido, Bibliotecario</h1>
-      <h2 className='text-white'> Tabla de disponiblidad.</h2>
-      <div className='border border-l-purple-950'>        
+ <main className='w-full h-screen bg-black flex flex-col items-center justify-center'>
+  <div className='w-full top-0'>
+     <NavbarAdmin/>
+  </div>
+    <section className='w-full h-screen bg-black mt-14'>
+      <div className='text-white font-texth1'>
+         <h1 className='text-4xl uppercase underline decoration-fuchsia-900 text-center m-7'>Tabla de disponibilidad</h1>
+      </div>
+     
+      <div className=' items-center justify-center flex'>        
         <DataTable value={libros} tableStyle={{ minWidth: '60rem' }} className='bg-black border text-fuchsia-500'>
-          <Column field="title" header="TÍTULO" className='border-b border-t border-white mb-4'></Column>
+          <Column field="title" header="TÍTULO" className='border-b border-t border-white mb-4 '></Column>
           <Column header="IMAGEN" body={renderImage} className='border-b border-t border-white mb-4'></Column>
           <Column header="DISPONIBLIDAD" body={renderAvailability} className='border-b border-t border-white mb-4'></Column>
-          <Column header="CAMBIAR DISPONIBLIDAD" body={renderChangeButton} className='border-b border-t mb-4 justify-center'></Column>
+          <Column header="CAMBIAR DISPONIBLIDAD" body={renderChangeButton} className='border-b border-t mb-4'></Column>
         </DataTable>
       </div>
     </section>
