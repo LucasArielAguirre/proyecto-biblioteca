@@ -1,8 +1,26 @@
 import Spline from '@splinetool/react-spline';
-import { Link } from "react-router-dom";
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 
 export default function App() {
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+    const navigate = useNavigate();
+  
+    const handleLogin = () => {
+  
+      if (username === 'admin' && password === 'admin123') {
+        localStorage.setItem('user', JSON.stringify({ role: 'admin' }));
+        navigate('/admin');
+      } else if (username === 'user' && password === 'user123') {
+        localStorage.setItem('user', JSON.stringify({ role: 'user' }));
+        navigate('/user');
+      } else {
+        alert('Credenciales inválidas');
+      }
+    };
+
   return (
 
     <section className='w-screen h-screen overflow-hidden'>
@@ -16,13 +34,24 @@ export default function App() {
                     Iniciar Sesión
                 </h1>
                 <form className='flex flex-col gap-4 w-full'>
-                    <input type='text' placeholder='Usuario' className='rounded-lg border border-gray-300 p-2 w-full' />
-                    <input type='password' placeholder='Contraseña' className='rounded-lg border border-gray-300 p-2 w-full' />
-                    <Link to="/" className='flex justify-center items-center'>
-                    <button className='rounded-lg bg-red-500 px-4 py-2 text-white hover:bg-red-700 transition-all duration-300'>
+                    <input 
+                    type='text' 
+                    placeholder='Nombre de usuario' 
+                    value={username}  
+                    onChange={(e) => setUsername(e.target.value)} 
+                    className='rounded-lg border border-gray-300 p-2 w-full' />
+                   
+                    <input 
+                    type='password' 
+                    placeholder='Contraseña'
+                    value={password} 
+                    onChange={(e) => setPassword(e.target.value)} 
+                    className='rounded-lg border border-gray-300 p-2 w-full' />
+
+                    <button onClick={handleLogin} className='rounded-lg bg-red-500 px-4 py-2 text-white hover:bg-red-700 transition-all duration-300'>
                         Iniciar Sesión
                     </button>
-                    </Link>
+                    
                 </form>
             </div>
             </div>

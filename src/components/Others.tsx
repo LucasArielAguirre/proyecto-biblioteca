@@ -35,7 +35,7 @@ const Others = () => {
             >
               <article className="relative w-full h-full">
                 <img
-                  src={`/${img}`}
+                  src={`${img}`}
                   alt={title}
                   className="object-cover w-full h-full transition-opacity duration-300 saturate-150 group-hover:opacity-75 bg-cover bg-center"
                 />

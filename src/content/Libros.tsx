@@ -16,7 +16,7 @@ export interface BookInfo {
     {
       title: "Coche negro",
       author: "Javier Cervantes",
-      img: "coche-negro.jpg",
+      img: "/coche-negro.jpg",
       readTime: 275,
       disponible: true,
       description: "Valeria es seguida por un misterioso coche negro, revelando secretos escalofriantes en una ciudad marcada por desapariciones inquietantes.",
@@ -29,7 +29,7 @@ export interface BookInfo {
     {
       title: "Vidas paralelas",
       author: "Catalina Sanchez",
-      img: "paralelas.jpg",
+      img: "/paralelas.jpg",
       readTime: 254,
       disponible: false,
       description: "Biografías de líderes y héroes, comparando sus virtudes y defectos, revelando lecciones morales y éticas profundas.",
@@ -42,7 +42,7 @@ export interface BookInfo {
     {
       title: "Venganza",
       author: "Sergio Rosales",
-      img: "venganza.jpg",
+      img: "/venganza.jpg",
       readTime: 304,
       disponible: true,
       description: "Martín busca justicia por la muerte de su esposa, pero su sed de venganza lo lleva a un camino oscuro y peligroso.",
@@ -55,7 +55,7 @@ export interface BookInfo {
     {
         title: "Cruce de demonios",
         author: "Kevin J. Anderson",
-        img: "cruce-de-demonios.jpg",
+        img: "/cruce-de-demonios.jpg",
         readTime: 124,
         disponible: true,
         description: "Clara despierta fuerzas malignas en un pueblo antiguo, enfrentándose a un ritual oscuro que amenaza con consumir su alma.",
