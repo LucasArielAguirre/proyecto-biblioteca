@@ -1,13 +1,28 @@
 import Spline from '@splinetool/react-spline';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import mobileImage from '../../public/mobileimage.jpg';
 
 
 export default function App() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [isMobile, setIsMobile] = useState(false);
     const navigate = useNavigate();
-  
+
+    useEffect(() => {
+        // Función para manejar el cambio de tamaño de la ventana
+        const handleResize = () => {
+            setIsMobile(window.innerWidth < 780);
+        };
+
+        // Establecer el estado inicial
+        handleResize();
+
+        // Escuchar cambios en el tamaño de la ventana
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize); // Limpiar el evento
+    }, []);
     const handleLogin = () => {
   
       if (username === 'admin' && password === 'admin123') {
@@ -25,7 +40,12 @@ export default function App() {
 
     <section className='w-screen h-screen overflow-hidden'>
         <div className='abosolute w-full h-[400px] md:w-full md:h-screen justify-center items-center'>
-         <Spline scene="https://prod.spline.design/kbY37OsTMo3GuavB/scene.splinecode" />
+ 
+          {!isMobile ? (
+                    <Spline scene="https://prod.spline.design/kbY37OsTMo3GuavB/scene.splinecode" />
+                ) : (
+                    <img src={mobileImage} alt="Imagen móvil" className="w-full h-full content-center bg-cover" />
+                )}
         </div>
  
         <div className='flex absolute w-full h-[300px] bottom-0 right-0 m-auto md:right-0 md:w-[440px] md:h-screen bg-[--var-bgcolor] items-center justify-center overflow-hidden'>
