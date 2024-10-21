@@ -55,7 +55,7 @@ const Estados = () => {
          <h1 className='text-4xl uppercase underline decoration-fuchsia-900 text-center m-7'>Tabla de disponibilidad</h1>
       </div>
      
-      <div className=' items-center justify-center flex'>        
+      <div className='items-center justify-center'>        
         <DataTable value={libros} tableStyle={{ minWidth: '60rem' }} className='bg-black border text-fuchsia-500'>
           <Column field="title" header="TÍTULO" className='border-b border-t border-white mb-4 text-white uppercase'></Column>
           <Column header="IMAGEN" body={renderImage} className='border-b border-t border-white mb-4'></Column>
