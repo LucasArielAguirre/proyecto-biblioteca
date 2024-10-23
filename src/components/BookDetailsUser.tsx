@@ -51,7 +51,7 @@ const BookDetailsUser: React.FC = () => {
 
   return (
     <div className="h-full bg-[--var-bgcolor] flex flex-col items-center pt-20 px-4"> 
-    <a href="/">
+    <a href="/user">
     <span 
     className='text-sm items-center mb-3 flex flex-row px-2 py-1 transparent rounded-md border border-slate-300 hover:bg-slate-400'> 
         <LineMdArrowSmallLeft/>
