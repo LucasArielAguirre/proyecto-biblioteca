@@ -42,7 +42,7 @@ const AllSearch = () => {
       </section>
       
       <section className="md:h-full bg-[--var-bgcolor] flex flex-col items-center mt-4 px-4">
-        <Popular />
+        <Popular/>
       </section>
       
     </div>

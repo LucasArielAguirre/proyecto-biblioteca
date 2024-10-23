@@ -1,7 +1,8 @@
 import Spline from '@splinetool/react-spline';
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import mobileImage from '../../public/mobileimage.jpg';
+import mobileImage from '/mobileimage.jpg';
+
 
 
 export default function App() {
@@ -11,15 +12,14 @@ export default function App() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        // Función para manejar el cambio de tamaño de la ventana
+      
         const handleResize = () => {
             setIsMobile(window.innerWidth < 780);
         };
 
-        // Establecer el estado inicial
-        handleResize();
 
-        // Escuchar cambios en el tamaño de la ventana
+        handleResize();
+   
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize); // Limpiar el evento
     }, []);

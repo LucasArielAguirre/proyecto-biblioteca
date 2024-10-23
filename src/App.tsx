@@ -16,6 +16,8 @@ import Estados from './pages/Estados';
 import { Analytics } from '@vercel/analytics/react';
 import AllsearchAd from './pages/AllsearchAd';
 import Allsearchuser from './pages/Allsearchuser';
+import BookDetailsAdmin from './components/BookDetailsAdmin';
+import BookDetailsUser from './components/BookDetailsUser';
 
 function App() {
   return (
@@ -66,10 +68,19 @@ const MainContent: React.FC = () => {
             </ProtectedRoute>
 
           } />
-            <Route path="/admin/allsearchad" element={
+               <Route path="/admin/allsearchad" element={
               <ProtectedRoute role="admin"> 
                 <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0, y: -50 }} transition={{ duration: 0.5 }}>
                   <AllsearchAd />
+                </motion.div>
+            </ProtectedRoute>
+
+          } />
+  
+          <Route path="/admin/:id" element={
+              <ProtectedRoute role="admin"> 
+                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0, y: -50 }} transition={{ duration: 0.5 }}>
+                 <BookDetailsAdmin/>
                 </motion.div>
             </ProtectedRoute>
 
@@ -94,6 +105,14 @@ const MainContent: React.FC = () => {
                 <Allsearchuser />
               </motion.div>
             </ProtectedRoute>
+          } />
+           <Route path="/user/:id" element={
+              <ProtectedRoute role="user"> 
+                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0, y: -50 }} transition={{ duration: 0.5 }}>
+                  <BookDetailsUser/>
+                </motion.div>
+            </ProtectedRoute>
+
           } />
         </Routes>
 
