@@ -76,27 +76,6 @@ const BookDetails: React.FC = () => {
             <p id='time' className="text-gray-500 text-sm mt-2 mx-2 md:mx-0"> <b className="animate-pulse">⏳</b> Lectura en {book.readTime} minutos.</p>          
           </div>
 
-        
-          <div className="flex space-x-4 mt-4 items-center justify-center md:justify-start md:items-start">
-            <motion.button 
-              whileTap={{ scale: 2 }}
-              onClick={handleReserve} 
-              transition={{transition:"easeIn", duration: 0.5}}
-              className={`bg-blue-500 text-white px-4 py-2 rounded-lg shadow hover:bg-blue-600 transition duration-300 ${!isAvailable ? 'opacity-50 cursor-not-allowed' : ''}`} 
-              disabled={!isAvailable} 
-            >
-              Reservar
-            </motion.button >
-          
-            <motion.button 
-            whileTap={{ scale: 2 }}
-              onClick={handleReturn}
-              className={`bg-green-500 text-white px-4 py-2 rounded-lg shadow hover:bg-green-600 transition duration-300 ${isAvailable ? 'opacity-50 cursor-not-allowed' : ''}`} 
-              disabled={isAvailable}
-            >
-              Devolver
-            </motion.button>
-          </div>
         </div>
       </div>
     </div>
