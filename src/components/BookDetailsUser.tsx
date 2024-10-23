@@ -51,7 +51,7 @@ const BookDetailsAdmin: React.FC = () => {
   };
 
   const handleGoBack = () => {
-    navigate('/user/allsearchad'); 
+    navigate('/user/allsearchuser'); 
   };
   return (
     <div className="h-full bg-[--var-bgcolor] flex flex-col items-center pt-20 px-4"> 
