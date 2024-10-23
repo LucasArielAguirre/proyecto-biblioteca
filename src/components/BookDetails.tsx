@@ -40,14 +40,6 @@ const BookDetails: React.FC = () => {
     );
   };
 
-  const handleReserve = () => {
-    setIsAvailable(false); // Cambia el estado a no disponible
-  };
-
-
-  const handleReturn = () => {
-    setIsAvailable(true); 
-  };
 
   return (
     <div className="h-full bg-[--var-bgcolor] flex flex-col items-center pt-20 px-4"> 
