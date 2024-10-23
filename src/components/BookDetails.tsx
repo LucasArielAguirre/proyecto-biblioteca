@@ -1,30 +1,23 @@
-import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import React from 'react';
+import { useParams, Link } from 'react-router-dom'; 
 import { Libros } from '../content/Libros';
-import { motion } from "framer-motion"
-import LineMdArrowSmallLeft from './icons/ArrowLeft'
+import LineMdArrowSmallLeft from './icons/ArrowLeft';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 
-
 const BookDetails: React.FC = () => {
-  useGSAP(()=>{
-    gsap.from('#imgbook', { opacity: 0, z:520, borderRadius:80, duration: 1.5 , ease: "power1.inOut" });
-    gsap.from('#time', { opacity:0, x:120, ease: "power1.inOut", duration: 0.7 });
-    gsap.from('#stragger', { opacity: 0, ease: "power1.inOut", duration: 0.7, stagger:0.1})
-    
-  },[])
+  useGSAP(() => {
+    gsap.from('#imgbook', { opacity: 0, z: 520, borderRadius: 80, duration: 1.5, ease: "power1.inOut" });
+    gsap.from('#time', { opacity: 0, x: 120, ease: "power1.inOut", duration: 0.7 });
+    gsap.from('#stragger', { opacity: 0, ease: "power1.inOut", duration: 0.7, stagger: 0.1 });
+  }, []);
 
-  const { id } = useParams<{ id: string }>(); 
+  const { id } = useParams<{ id: string }>();
   const book = Libros.find(book => book.title === id); 
-  
- 
-  const [isAvailable, setIsAvailable] = useState(book ? book.disponible : false); 
 
   if (!book) {
     return <h2 className="text-red-500 text-xl">Libro no encontrado</h2>;
   }
-
 
   const renderAvailability = (disponible: boolean) => {
     return (
@@ -40,34 +33,35 @@ const BookDetails: React.FC = () => {
     );
   };
 
-
   return (
-    <div className="h-full bg-[--var-bgcolor] flex flex-col items-center pt-20 px-4"> 
-    <a href="/">
-    <span 
-    className='text-sm items-center mb-3 flex flex-row px-2 py-1 transparent rounded-md border border-slate-300 hover:bg-slate-400'> 
-        <LineMdArrowSmallLeft/>
-        Volver
-      </span></a>
+    <div className="h-full bg-[--var-bgcolor] flex flex-col items-center pt-20 px-4">
+      <Link to="/"> 
+        <span className='text-sm items-center mb-3 flex flex-row px-2 py-1 transparent rounded-md border border-slate-300 hover:bg-slate-400'>
+          <LineMdArrowSmallLeft />
+          Volver
+        </span>
+      </Link>
       <div id="stragger" className='flex flex-col md:flex-row items-center md:items-start max-w-3xl mx-auto mb-6'>
-        <img id='imgbook'
-          src={`${book.img}`} 
-          alt={book.title} 
-          className="w-52 h-80 rounded-lg shadow-lg shadow-red-700 saturate-150 mr-4 mb-5 md:mb-0" 
-        /> 
-      
-        <div className='flex flex-col justify-between'> {}
+        <img
+          id='imgbook'
+          src={`${book.img}`}
+          alt={book.title}
+          className="w-52 h-80 rounded-lg shadow-lg shadow-red-700 saturate-150 mr-4 mb-5 md:mb-0"
+        />
+
+        <div className='flex flex-col justify-between'>
           <div>
             <div className='flex flex-row mb-2'>
               <h2 className="text-2xl font-texth1 text-[--var-color-text] leading-tight hover:underline mx-2 md:mx-0">{book.title}</h2>
               <div className="ml-2">
-                {renderAvailability(isAvailable)}
+                {renderAvailability(book.disponible)}
               </div>
             </div>
             <p className="text-gray-700 text-sm max-w-md mx-2 md:mx-0">{book.resume}</p>
-            <p id='time' className="text-gray-500 text-sm mt-2 mx-2 md:mx-0"> <b className="animate-pulse">⏳</b> Lectura en {book.readTime} minutos.</p>          
+            <p id='time' className="text-gray-500 text-sm mt-2 mx-2 md:mx-0">
+              <b className="animate-pulse">⏳</b> Lectura en {book.readTime} minutos.
+            </p>
           </div>
-
         </div>
       </div>
     </div>
