@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { Libros } from '../content/Libros';
 import { motion } from "framer-motion"
 import LineMdArrowSmallLeft from './icons/ArrowLeft'
@@ -7,7 +7,8 @@ import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 
 
-const BookDetailsUser: React.FC = () => {
+const BookDetailsAdmin: React.FC = () => {
+  const navigate = useNavigate();
   useGSAP(()=>{
     gsap.from('#imgbook', { opacity: 0, z:520, borderRadius:80, duration: 1.5 , ease: "power1.inOut" });
     gsap.from('#time', { opacity:0, x:120, ease: "power1.inOut", duration: 0.7 });
@@ -49,14 +50,17 @@ const BookDetailsUser: React.FC = () => {
     setIsAvailable(true); 
   };
 
+  const handleGoBack = () => {
+    navigate('/user/allsearchad'); 
+  };
   return (
     <div className="h-full bg-[--var-bgcolor] flex flex-col items-center pt-20 px-4"> 
-    <a href="/user">
+    <button onClick={handleGoBack}>
     <span 
     className='text-sm items-center mb-3 flex flex-row px-2 py-1 transparent rounded-md border border-slate-300 hover:bg-slate-400'> 
         <LineMdArrowSmallLeft/>
         Volver
-      </span></a>
+      </span></button>
       <div id="stragger" className='flex flex-col md:flex-row items-center md:items-start max-w-3xl mx-auto mb-6'>
         <img id='imgbook'
           src={`${book.img}`} 
@@ -103,4 +107,4 @@ const BookDetailsUser: React.FC = () => {
   );
 };
 
-export default BookDetailsUser;
+export default BookDetailsAdmin;
