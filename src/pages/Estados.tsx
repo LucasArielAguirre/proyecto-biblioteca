@@ -3,6 +3,7 @@ import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 import { Libros as initialLibros } from '../content/Libros';
 import NavbarAdmin from '../components/NavbarAdmin';
+import { motion } from 'framer-motion';
 
 const Estados = () => {
   const [libros, setLibros] = useState(initialLibros);
@@ -36,18 +37,22 @@ const Estados = () => {
   };
   const renderChangeButton = (rowData: { title: string }) => {
     return (
-      <button
+      <motion.button
+      whileTap={{
+        scale: 0.9,
+        backgroundColor:'#e3c5fd', 
+      }}
         onClick={() => handleChangeAvailability(rowData)}
         className='bg-blue-300 text-black px-4 py-2 rounded'
       >
         Cambiar
-      </button>
+      </motion.button>
     );
   };
 
   return (
  <main className='w-full h-screen bg-black flex flex-col items-center justify-center'>
-  <div className='w-full top-0'>
+  <div className='w-full top-0 '>
      <NavbarAdmin/>
   </div>
     <section className='w-full h-screen bg-black mt-14'>

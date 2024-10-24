@@ -14,7 +14,7 @@ const Others = () => {
       OTROS LIBROS <Star/>
     </h1>
 
-    <div className="bento-grid w-[70%] mx-auto h-full">
+    <div className="w-[70%] mx-auto h-full">
       <div className="grid grid-cols-4 grid-rows-4 gap-4 auto-rows-[minmax(100px,_1fr)] h-full">
         {Libros.map((book, index) => {
           const { title, img, readTime } = book;
