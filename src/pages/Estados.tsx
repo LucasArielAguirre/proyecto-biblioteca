@@ -27,9 +27,9 @@ const Estados = () => {
     );
   };
 
-  // Renderizador de imagen para ambas tablas
+ 
   const renderImage = (rowData: { img: string }) => {
-    return <img src={rowData.img} style={{ width: '70px' }} />;
+    return <img src={rowData.img} alt='Imagen de material en la biblioteca' style={{ width: '70px' }} />;
   };
 
   // Funciones para cambiar la disponibilidad de Libros y Utiles
@@ -128,7 +128,7 @@ const Estados = () => {
           <h1 className='text-4xl uppercase underline decoration-fuchsia-900 text-center m-7'>Disponibilidad de Libros</h1>
         </div>
         <div className='items-center justify-center md:mx-40 mx-4'>
-          <DataTable value={libros} tableStyle={{  minWidth: '60rem', minHeight: '500px'  }} className='bg-black border text-fuchsia-500'>
+          <DataTable value={libros} alt="Libros disponibles" tableStyle={{  minWidth: '60rem', minHeight: '500px'  }} className='bg-black border text-fuchsia-500'>
             <Column field="title" header="TÍTULO" className='border-b border-t border-white mb-4 text-white uppercase'></Column>
             <Column header="IMAGEN" body={renderImage} className='border-b border-t border-white mb-4'></Column>
             <Column header="DISPONIBLIDAD" body={renderAvailability} className='border-b border-t border-white mb-4'></Column>
