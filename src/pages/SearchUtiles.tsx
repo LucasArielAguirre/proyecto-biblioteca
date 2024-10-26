@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { TextField, Autocomplete, Box, Typography } from '@mui/material';
 import { Utiles, UtilesInfo } from '../content/Utiles';
-import { Link } from 'react-router-dom'; 
 import Star from '../components/icons/Star';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
