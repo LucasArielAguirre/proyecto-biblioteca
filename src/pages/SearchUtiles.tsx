@@ -47,9 +47,7 @@ const AllSearch = () => {
               <Typography variant="h6" className='text-center text-xl font-texth1 uppercase'>{selectedUtil.title}</Typography>
               <img src={selectedUtil.img} alt={selectedUtil.title} className="w-40 h-50 rounded-lg flex justify-items-center m-auto" />
               <Typography variant="h6">Cantidad: <span className='font-texth1 text-[--var-color-text-blue] text-xl'>{selectedUtil.cantidad}</span></Typography>
-              <Box mt={2}>
-                <Link to={`/utiles/${encodeURIComponent(selectedUtil.title)}`} className='bg-black hover:bg-black/90 rounded-lg py-1 px-2 text-lg text-white font-texth1 flex justify-center align-middle'>Ver información</Link>
-              </Box>
+        
             </Box>
           )}
         </div>
