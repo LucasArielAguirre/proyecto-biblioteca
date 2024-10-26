@@ -42,7 +42,7 @@ const BookDetailsAdmin: React.FC = () => {
   };
 
   const handleReserve = () => {
-    setIsAvailable(false); // Cambia el estado a no disponible
+    setIsAvailable(false); 
   };
 
 

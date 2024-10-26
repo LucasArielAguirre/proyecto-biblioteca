@@ -18,6 +18,9 @@ import AllsearchAd from './pages/AllsearchAd';
 import Allsearchuser from './pages/Allsearchuser';
 import BookDetailsAdmin from './components/BookDetailsAdmin';
 import BookDetailsUser from './components/BookDetailsUser';
+import SearchUtiles from './pages/SearchUtiles';
+import SearchUtilesAd from './pages/SearchUtilesAd';
+import SearchUtilesUser from './pages/SearchUtilesUser';
 
 function App() {
   return (
@@ -55,6 +58,11 @@ const MainContent: React.FC = () => {
               <AllSearch />
             </motion.div>
           } />
+              <Route path="/searchutiles" element={
+            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -50 }} transition={{ duration: 0.5 }}>
+              <SearchUtiles />
+            </motion.div>
+          } />
           <Route path="/login" element={
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0, y: -50 }} transition={{ duration: 0.5 }}>
               <Login />
@@ -72,6 +80,14 @@ const MainContent: React.FC = () => {
               <ProtectedRoute role="admin"> 
                 <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0, y: -50 }} transition={{ duration: 0.5 }}>
                   <AllsearchAd />
+                </motion.div>
+            </ProtectedRoute>
+
+          } />
+           <Route path="/admin/searchutilesad" element={
+              <ProtectedRoute role="admin"> 
+                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0, y: -50 }} transition={{ duration: 0.5 }}>
+                  <SearchUtilesAd />
                 </motion.div>
             </ProtectedRoute>
 
@@ -105,6 +121,14 @@ const MainContent: React.FC = () => {
                 <Allsearchuser />
               </motion.div>
             </ProtectedRoute>
+          } />
+                     <Route path="/user/searchutilesuser" element={
+              <ProtectedRoute role="user"> 
+                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0, y: -50 }} transition={{ duration: 0.5 }}>
+                  <SearchUtilesUser />
+                </motion.div>
+            </ProtectedRoute>
+
           } />
            <Route path="/user/:id" element={
               <ProtectedRoute role="user"> 

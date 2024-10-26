@@ -20,6 +20,11 @@ const Bienvenida = () => {
             <span className="spangsap text-lg md:text-xl underline decoration-[--var-color-text-red] animate-pulse ">IES N°9-012
           </span>
         </motion.h1>
+        <motion.h5 
+        initial={{ opacity: 0, x: 20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ ease:"easeIn"  , duration: 0.5 }}
+        className="text-sm md:text-base font-texth5 text-[--var-color-text] first-letter:text-[--var-color-text-red] first-letter:text-lg md:first-letter:text-4xl font-bold">Encontraras libros de cualquier genero junto con materiales de geografia imprescindibles.</motion.h5>
       </div>
 
       <motion.div 

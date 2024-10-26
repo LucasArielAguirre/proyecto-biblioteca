@@ -8,6 +8,7 @@ export default {
     extend: {
       fontFamily: {
 				texth1: ['Libre Baskerville'],
+        texth5: ['Petit Formal Script'],
 			}
     },
   },

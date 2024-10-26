@@ -4,7 +4,7 @@ import { Libros, BookInfo } from '../content/Libros';
 import { Link } from 'react-router-dom'; 
 import Popular from '../components/Popular'; 
 
-     
+
 
 const AllSearch = () => {
   const [selectedBook, setSelectedBook] = useState<BookInfo | null>(null);
@@ -26,7 +26,7 @@ const AllSearch = () => {
             className="w-full"
           />
   
-          {selectedBook && (
+          {selectedBook && (  
             <Box mt={4} p={2} className="bg-gray-100 rounded-lg flex flex-col" >
               <Typography variant="h6" className='text-center text-xl font-texth1 uppercase'>{selectedBook.title}</Typography>
               <img src={selectedBook.img} alt={selectedBook.title} className="w-40 h-50 rounded-lg flex justify-items-center m-auto" />
