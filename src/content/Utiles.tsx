@@ -13,7 +13,7 @@ export interface UtilesInfo {
         disponible: true,
       },
       {
-        title: "Globo terraquio",
+        title: "Globo terraqueo",
         img: "/globo.jpg",
         cantidad: 2,
         disponible: false,
